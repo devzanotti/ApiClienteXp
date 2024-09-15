@@ -6,9 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ApiClienteXp.Controllers
 {
+    //Justificando ausencia de itens:
     //Metodos retornando todos os registros sem filtros por ser um Case com poucos registros
+    //Sem ambiguidade de endpoints para renomear rotas
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ClientesController :ControllerBase
     {
         private readonly AppDbContext _context;
@@ -17,13 +19,14 @@ namespace ApiClienteXp.Controllers
         {
             _context = context;
         }
+
         
         [HttpGet]
-        public ActionResult<IEnumerable<Cliente>> Get()
+        public async Task<ActionResult<IEnumerable<Cliente>>> Get()
         {
             try
             {
-                var clientes = _context.Clientes.AsNoTracking().ToList();
+                var clientes = await _context.Clientes.AsNoTracking().ToListAsync();
                 if (clientes is null)
                 {
                     return NotFound("Clientes nao encontrados");
@@ -38,10 +41,11 @@ namespace ApiClienteXp.Controllers
 
         }
 
-        [HttpGet("{id}", Name ="ObterCliente")]
-        public ActionResult<Cliente> Get(int id)
+        //Restricao para nao atender requisicoes invalidas (id menor que 1)
+        [HttpGet("{id:int:min(1)}", Name ="ObterCliente")]
+        public async Task<ActionResult<Cliente>> Get(int id)
         {
-            var cliente = _context.Clientes.FirstOrDefault(c=> c.ClienteId == id);
+            var cliente = await _context.Clientes.FirstOrDefaultAsync(c=> c.ClienteId == id);
             if(cliente == null)
             {
                 return NotFound($"Cliente com id= {id} nao localizado");
