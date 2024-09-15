@@ -1,4 +1,5 @@
 ﻿using ApiClienteXp.Context;
+using ApiClienteXp.Filters;
 using ApiClienteXp.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +23,7 @@ namespace ApiClienteXp.Controllers
 
         //
         [HttpGet]
+        [ServiceFilter(typeof(ApiLogginFilter))]
         public async Task<ActionResult<IEnumerable<Cliente>>> Get()
         {
             try
