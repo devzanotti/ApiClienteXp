@@ -2,7 +2,7 @@
   {
     "ContainingType": "ApiClienteXp.Controllers.ClientesController",
     "Method": "Get",
-    "RelativePath": "Clientes",
+    "RelativePath": "api/Clientes",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -22,7 +22,7 @@
   {
     "ContainingType": "ApiClienteXp.Controllers.ClientesController",
     "Method": "Post",
-    "RelativePath": "Clientes",
+    "RelativePath": "api/Clientes",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -38,7 +38,7 @@
   {
     "ContainingType": "ApiClienteXp.Controllers.ClientesController",
     "Method": "Get",
-    "RelativePath": "Clientes/{id}",
+    "RelativePath": "api/Clientes/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -65,7 +65,7 @@
   {
     "ContainingType": "ApiClienteXp.Controllers.ClientesController",
     "Method": "Put",
-    "RelativePath": "Clientes/{id}",
+    "RelativePath": "api/Clientes/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -86,7 +86,7 @@
   {
     "ContainingType": "ApiClienteXp.Controllers.ClientesController",
     "Method": "Delete",
-    "RelativePath": "Clientes/{id}",
+    "RelativePath": "api/Clientes/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
