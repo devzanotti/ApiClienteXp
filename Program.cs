@@ -5,6 +5,7 @@ using ApiClienteXp.Repositories;
 using ApiClienteXp.Repositories.Interfaces;
 using Asp.Versioning;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,7 +31,27 @@ builder.Services.AddControllers(options =>
     });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen( c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "API Clientes",
+        Description = "CRUD Clientes",
+        TermsOfService = new Uri("https://google.com"),
+        Contact = new OpenApiContact
+        {
+            Name = "Gustavo",
+            Email = "guzanottis@gmail.com",
+            Url = new Uri("https://github.com/devzanotti"),
+        },
+        License = new OpenApiLicense
+        {
+            Name = "Github Repo",
+            Url = new Uri("https://github.com/devzanotti/ApiClienteXp")
+        }
+    });
+});
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 

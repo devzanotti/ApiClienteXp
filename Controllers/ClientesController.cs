@@ -11,6 +11,7 @@ namespace ApiClienteXp.Controllers
     //Metodos retornando todos os registros sem filtros por ser um Case com poucos registros
     [ApiController]
     [Route("api/[controller]")]
+    [ApiConventionType(typeof(DefaultApiConventions))]
     public class ClientesController :ControllerBase
     {
         private readonly IClienteRepository _clienteRepository;
