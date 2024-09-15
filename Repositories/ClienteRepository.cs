@@ -13,9 +13,13 @@ namespace ApiClienteXp.Repositories
         {
         }
 
-        public IEnumerable<Cliente> GetClientesPorNome(string nome)
+        public async Task<IEnumerable<Cliente>> GetClientesPorNomeAsync(string nome)
         {
-            return GetAll().Where(c => c.Nome == nome);
+            var clientes = await GetAllAsync();
+            var clientesRecebidos = clientes.Where(c => c.Nome == nome);
+            return clientesRecebidos;   
+
         }
+
     }
 }

@@ -24,9 +24,9 @@ namespace ApiClienteXp.Controllers
         }
 
         [HttpGet("clientes/{nome}")]
-        public ActionResult <IEnumerable<Cliente>> GetClientesNome(string nome)
+        public async Task<ActionResult<IEnumerable<Cliente>>> GetClientesNome(string nome)
         {
-            var clientes = _clienteRepository.GetClientesPorNome(nome);
+            var clientes = await _clienteRepository.GetClientesPorNomeAsync(nome);
 
             if (clientes is null)
             {
@@ -37,20 +37,21 @@ namespace ApiClienteXp.Controllers
 
         }
 
+
         //Usando Logging apenas nessa para demonstrar o uso, nao vejo necessidade de usar nessa api pequena
         [HttpGet]
         [ServiceFilter(typeof(ApiLogginFilter))]
-        public ActionResult<IEnumerable<Cliente>> Get()
+        public async Task<ActionResult<IEnumerable<Cliente>>> Get()
         {
-            var clientes = _clienteRepository.GetAll();
+            var clientes = await _clienteRepository.GetAllAsync();
             return Ok(clientes);
         }
 
         //Restricao para nao atender requisicoes invalidas (id menor que 1)
         [HttpGet("{id:int:min(1)}", Name ="ObterCliente")]
-        public ActionResult<Cliente> Get(int id)
+        public async Task<ActionResult<Cliente>> Get(int id)
         {
-            var cliente = _clienteRepository.Get(c=> c.ClienteId == id);
+            var cliente = await _clienteRepository.Get(c=> c.ClienteId == id);
             if(cliente is null)
             {
                 return NotFound($"Cliente com id= {id} nao localizado");
@@ -59,7 +60,7 @@ namespace ApiClienteXp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(Cliente cliente)
+        public async Task<ActionResult> Post(Cliente cliente)
         {
             if(cliente is null)
             {
@@ -76,7 +77,7 @@ namespace ApiClienteXp.Controllers
 
 
         [HttpPut("{id:int}")]
-        public ActionResult Put(int id, Cliente cliente)
+        public async Task<ActionResult> Put(int id, Cliente cliente)
         {
             if(id != cliente.ClienteId)
             {
@@ -89,9 +90,9 @@ namespace ApiClienteXp.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         { 
-            var cliente = _clienteRepository.Get(c=> c.ClienteId == id);  
+            var cliente = await _clienteRepository.Get(c=> c.ClienteId == id);  
             if(cliente == null)
             { 
                 return NotFound($"Cliente com id= {id} nao localizado");

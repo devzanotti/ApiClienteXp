@@ -5,6 +5,6 @@ namespace ApiClienteXp.Repositories.Interfaces
 {
     public interface IClienteRepository : IRepository<Cliente>
     {
-        IEnumerable<Cliente> GetClientesPorNome(string nome);
+        Task <IEnumerable<Cliente>> GetClientesPorNomeAsync(string nome);
     }
 }
