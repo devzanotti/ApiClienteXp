@@ -1,6 +1,7 @@
 ﻿using ApiClienteXp.Context;
 using ApiClienteXp.Filters;
 using ApiClienteXp.Models;
+using ApiClienteXp.Repositories;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,56 +13,48 @@ namespace ApiClienteXp.Controllers
     [Route("api/[controller]")]
     public class ClientesController :ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly IClienteRepository _repository;
         private readonly ILogger _logger;
 
-        public ClientesController(AppDbContext context, ILogger<ClientesController> logger)
+        public ClientesController(IClienteRepository repository, ILogger<ClientesController> logger)
         {
-            _context = context;
+            _repository = repository;
             _logger = logger;
         }
 
         //Usando Logging apenas nessa para demonstrar o uso, nao vejo necessidade de usar nessa api pequena
         [HttpGet]
         [ServiceFilter(typeof(ApiLogginFilter))]
-        public async Task<ActionResult<IEnumerable<Cliente>>> Get()
+        public ActionResult<IEnumerable<Cliente>> Get()
         {
-
-            _logger.LogInformation("########### GET api/clientes #############");
-            var clientes = await _context.Clientes.AsNoTracking().ToListAsync();
-            if (clientes is null)
-            {
-                return NotFound("Clientes nao encontrados");
-            }
-            return clientes;
-
+            var clientes = _repository.GetClientes();
+            return Ok(clientes);
         }
 
         //Restricao para nao atender requisicoes invalidas (id menor que 1)
         [HttpGet("{id:int:min(1)}", Name ="ObterCliente")]
-        public async Task<ActionResult<Cliente>> Get(int id)
+        public ActionResult<Cliente> Get(int id)
         {
-            var cliente = await _context.Clientes.FirstOrDefaultAsync(c=> c.ClienteId == id);
-            if(cliente == null)
+            var cliente =  _repository.GetCliente(id);
+            if(cliente is null)
             {
                 return NotFound($"Cliente com id= {id} nao localizado");
             }
-            return cliente;
+            return Ok(cliente);
         }
 
         [HttpPost]
         public ActionResult Post(Cliente cliente)
         {
-            if(cliente == null)
+            if(cliente is null)
             {
                 return BadRequest("Dados Invalidos");
             }
 
-            _context.Clientes.Add(cliente);
-            _context.SaveChanges();
+            var clienteCriado = _repository.Create(cliente);
             
             return new CreatedAtRouteResult("ObterCliente",
-                new { id = cliente.ClienteId }, cliente);
+                new { id = clienteCriado.ClienteId }, clienteCriado);
         }
 
 
@@ -75,9 +68,7 @@ namespace ApiClienteXp.Controllers
                 return BadRequest("Dados Invalidos");
             }
 
-            _context.Entry(cliente).State = EntityState.Modified;
-            _context.SaveChanges();
-
+            _repository.Update(cliente);
             return Ok(cliente);
 
         }
@@ -85,15 +76,15 @@ namespace ApiClienteXp.Controllers
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         { 
-            var cliente = _context.Clientes.FirstOrDefault( c=> c.ClienteId == id);  
+            var cliente = _repository.GetCliente(id);  
             if(cliente == null)
             { 
                 return NotFound($"Cliente com id= {id} nao localizado");
             }
-            _context.Clientes.Remove(cliente);
-            _context.SaveChanges();
 
-            return Ok(cliente);
+            var clienteExcluido = _repository.Delete(id);
+       
+            return Ok(clienteExcluido);
         }
 
 
