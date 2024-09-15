@@ -1,59 +1,21 @@
 ﻿using ApiClienteXp.Context;
 using ApiClienteXp.Models;
+using ApiClienteXp.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiClienteXp.Repositories
 {
-    public class ClienteRepository : IClienteRepository
+    public class ClienteRepository : Repository<Cliente>, IClienteRepository
     {
-        private readonly AppDbContext _context;
+       
 
-        public ClienteRepository(AppDbContext context)
+        public ClienteRepository(AppDbContext context) : base(context)
         {
-            _context = context;
         }
 
-        public IEnumerable<Cliente> GetClientes()
+        public IEnumerable<Cliente> GetClientesPorNome(string nome)
         {
-            return _context.Clientes.ToList();
-        }
-
-        public Cliente GetCliente(int id)
-        {
-            return _context.Clientes.FirstOrDefault(c => c.ClienteId == id);
-        }
-
-        public Cliente Create(Cliente cliente)
-        {
-            if (cliente == null)
-            {
-                throw new ArgumentNullException(nameof(cliente));
-            }
-            _context.Clientes.Add(cliente);
-            _context.SaveChanges();
-            return cliente;
-        }
-
-        public Cliente Update(Cliente cliente)
-        {
-            if (cliente == null)
-            {
-                throw new ArgumentNullException(nameof(cliente));
-            }
-            _context.Entry(cliente).State = EntityState.Modified;
-            _context.SaveChanges();
-            return cliente;
-        }
-        public Cliente Delete(int id)
-        {
-            var cliente = _context.Clientes.Find(id);
-            if (cliente == null)
-            {
-                throw new ArgumentNullException(nameof(cliente));
-            }
-            _context.Clientes.Remove(cliente);
-            _context.SaveChanges();
-            return cliente;
+            return GetAll().Where(c => c.Nome == nome);
         }
     }
 }
