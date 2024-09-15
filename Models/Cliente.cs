@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ApiClienteXp.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace ApiClienteXp.Models
 {
@@ -9,6 +10,7 @@ namespace ApiClienteXp.Models
 
         [Required(ErrorMessage = "O nome é obrigatório.")]
         [MaxLength(100, ErrorMessage = "O nome pode ter no máximo 100 caracteres.")]
+        [PrimeiraLetraMaiuscula]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "O CPF é obrigatório.")]
