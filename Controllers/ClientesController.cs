@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ApiClienteXp.Controllers
 {
+    //Metodos retornando todos os registros sem filtros por ser um Case com poucos registros
     [ApiController]
     [Route("[controller]")]
     public class ClientesController :ControllerBase
@@ -16,16 +17,25 @@ namespace ApiClienteXp.Controllers
         {
             _context = context;
         }
-
+        
         [HttpGet]
         public ActionResult<IEnumerable<Cliente>> Get()
         {
-            var clientes =_context.Clientes.ToList();
-            if(clientes is null)
+            try
             {
-                return NotFound("Clientes nao encontrados");
+                var clientes = _context.Clientes.AsNoTracking().ToList();
+                if (clientes is null)
+                {
+                    return NotFound("Clientes nao encontrados");
+                }
+                return clientes;
             }
-            return clientes;
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um problema ao tratar sua solicitacao.");
+            }
+
         }
 
         [HttpGet("{id}", Name ="ObterCliente")]
@@ -34,7 +44,7 @@ namespace ApiClienteXp.Controllers
             var cliente = _context.Clientes.FirstOrDefault(c=> c.ClienteId == id);
             if(cliente == null)
             {
-                return NotFound();
+                return NotFound($"Cliente com id= {id} nao localizado");
             }
             return cliente;
         }
@@ -44,7 +54,7 @@ namespace ApiClienteXp.Controllers
         {
             if(cliente == null)
             {
-                return BadRequest();
+                return BadRequest("Dados Invalidos");
             }
 
             _context.Clientes.Add(cliente);
@@ -62,7 +72,7 @@ namespace ApiClienteXp.Controllers
         {
             if(id != cliente.ClienteId)
             {
-                return BadRequest();
+                return BadRequest("Dados Invalidos");
             }
 
             _context.Entry(cliente).State = EntityState.Modified;
@@ -78,7 +88,7 @@ namespace ApiClienteXp.Controllers
             var cliente = _context.Clientes.FirstOrDefault( c=> c.ClienteId == id);  
             if(cliente == null)
             { 
-                return NotFound("Cliente nao localizado");
+                return NotFound($"Cliente com id= {id} nao localizado");
             }
             _context.Clientes.Remove(cliente);
             _context.SaveChanges();
