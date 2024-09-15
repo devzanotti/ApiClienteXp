@@ -1,0 +1,6 @@
+C:\Users\user\source\repos\ApiClienteXpxUnitTests\bin\Debug\net8.0\CoverletSourceRootsMapping_ApiClienteXpxUnitTests
+C:\Users\user\source\repos\ApiClienteXpxUnitTests\obj\Debug\net8.0\ApiClienteXpxUnitTests.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\ApiClienteXpxUnitTests\obj\Debug\net8.0\ApiClienteXpxUnitTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\ApiClienteXpxUnitTests\obj\Debug\net8.0\ApiClienteXpxUnitTests.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\ApiClienteXpxUnitTests\obj\Debug\net8.0\ApiClienteXpxUnitTests.AssemblyInfo.cs
+C:\Users\user\source\repos\ApiClienteXpxUnitTests\obj\Debug\net8.0\ApiClienteXpxUnitTests.csproj.CoreCompileInputs.cache
