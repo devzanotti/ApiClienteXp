@@ -7,27 +7,28 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ApiClienteXp.Controllers
 {
-    //Justificando ausencia de itens:
     //Metodos retornando todos os registros sem filtros por ser um Case com poucos registros
-    //Sem ambiguidade de endpoints para renomear rotas
     [ApiController]
     [Route("api/[controller]")]
     public class ClientesController :ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly ILogger _logger;
 
-        public ClientesController(AppDbContext context)
+        public ClientesController(AppDbContext context, ILogger<ClientesController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
-        //
+        //Usando Logging apenas nessa para demonstrar o uso, nao vejo necessidade de usar nessa api pequena
         [HttpGet]
         [ServiceFilter(typeof(ApiLogginFilter))]
         public async Task<ActionResult<IEnumerable<Cliente>>> Get()
         {
             try
             {
+                _logger.LogInformation("########### GET api/clientes #############");
                 var clientes = await _context.Clientes.AsNoTracking().ToListAsync();
                 if (clientes is null)
                 {
