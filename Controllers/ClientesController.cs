@@ -26,21 +26,14 @@ namespace ApiClienteXp.Controllers
         [ServiceFilter(typeof(ApiLogginFilter))]
         public async Task<ActionResult<IEnumerable<Cliente>>> Get()
         {
-            try
-            {
-                _logger.LogInformation("########### GET api/clientes #############");
-                var clientes = await _context.Clientes.AsNoTracking().ToListAsync();
-                if (clientes is null)
-                {
-                    return NotFound("Clientes nao encontrados");
-                }
-                return clientes;
-            }
-            catch (Exception)
-            {
 
-                return StatusCode(StatusCodes.Status500InternalServerError, "Ocorreu um problema ao tratar sua solicitacao.");
+            _logger.LogInformation("########### GET api/clientes #############");
+            var clientes = await _context.Clientes.AsNoTracking().ToListAsync();
+            if (clientes is null)
+            {
+                return NotFound("Clientes nao encontrados");
             }
+            return clientes;
 
         }
 
