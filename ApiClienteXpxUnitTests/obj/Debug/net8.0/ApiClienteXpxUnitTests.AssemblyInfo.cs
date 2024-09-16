@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiClienteXpxUnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e49b3da825ed104379ffc70070c9aeb68f19f0fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+994ee282b5b1ee9ed83f27138186d57a79ff59e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiClienteXpxUnitTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiClienteXpxUnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

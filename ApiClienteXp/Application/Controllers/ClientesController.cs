@@ -25,7 +25,7 @@ namespace ApiClienteXp.API.Controllers
         {
             var clientes = await _clienteRepository.GetClientesPorNomeAsync(nome);
 
-            if (clientes is null)
+            if (clientes is null || !clientes.Any())
             {
                 return NotFound();
             }
