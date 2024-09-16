@@ -216,3 +216,5 @@ C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\obj\Debug\net8.0
 C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\obj\Debug\net8.0\ApiClienteXp.pdb
 C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\obj\Debug\net8.0\ApiClienteXp.genruntimeconfig.cache
 C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\obj\Debug\net8.0\ref\ApiClienteXp.dll
+C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\bin\Debug\net8.0\Moq.dll

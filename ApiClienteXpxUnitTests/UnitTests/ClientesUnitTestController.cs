@@ -1,10 +1,13 @@
 ﻿using ApiClienteXp.Context;
 using ApiClienteXp.Controllers;
+using ApiClienteXp.Models;
 using ApiClienteXp.Repositories;
 using ApiClienteXp.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,25 +18,44 @@ namespace ApiClienteXpxUnitTests.UnitTests
 {
     public class ClientesUnitTestController
     {
-        public IClienteRepository repository;
-        public ILogger _logger;
-        public static DbContextOptions<AppDbContext> DbContextOptions { get; }
-
-        public static string connectionString = "Server=localhost;DataBase=apiclientedb;UId=root;Pwd=root";
-
-        static ClientesUnitTestController()
-        {
-            DbContextOptions = new DbContextOptionsBuilder<AppDbContext>()
-                .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
-                .Options;
-        }
+        private readonly Mock<IClienteRepository> _mockRepo;
+        private readonly Mock<ILogger<ClientesController>> _mockLogger;
+        private readonly ClientesController _controller;
 
         public ClientesUnitTestController()
         {
-            var context = new AppDbContext(DbContextOptions);
-            repository=new ClienteRepository(context);
+            _mockRepo = new Mock<IClienteRepository>();
+            _mockLogger = new Mock<ILogger<ClientesController>>();
+            _controller = new ClientesController(_mockRepo.Object, _mockLogger.Object);
         }
 
+        [Fact]
+        public async Task Get_ReturnsOkResult_WhenClienteExists()
+        {
+            // Arrange
+            var cliente = new Cliente { ClienteId = 1, Nome = "João", Cpf = "12345678910", Email = "joao@exemplo.com" };
+            _mockRepo.Setup(repo => repo.Get(c => c.ClienteId == 1)).ReturnsAsync(cliente);
 
+            // Act
+            var result = await _controller.Get(1);
+
+            // Assert
+            var okResult = Assert.IsType<OkObjectResult>(result.Result);
+            var returnValue = Assert.IsType<Cliente>(okResult.Value);
+            Assert.Equal(1, returnValue.ClienteId);
+        }
+
+        [Fact]
+        public async Task Get_ReturnsNotFound_WhenClienteDoesNotExist()
+        {
+            // Arrange
+            _mockRepo.Setup(repo => repo.Get(c => c.ClienteId == 1)).ReturnsAsync((Cliente)null);
+
+            // Act
+            var result = await _controller.Get(1);
+
+            // Assert
+            Assert.IsType<NotFoundObjectResult>(result.Result);
+        }
     }
 }
