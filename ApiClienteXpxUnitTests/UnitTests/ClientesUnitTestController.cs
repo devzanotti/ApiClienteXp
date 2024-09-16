@@ -1,8 +1,8 @@
-﻿using ApiClienteXp.Context;
-using ApiClienteXp.Controllers;
-using ApiClienteXp.Models;
+﻿using ApiClienteXp.API.Controllers;
+using ApiClienteXp.Context;
+using ApiClienteXp.Domain.Interfaces;
+using ApiClienteXp.Domain.Models;
 using ApiClienteXp.Repositories;
-using ApiClienteXp.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiClienteXp - Backup")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+939772e6b72ed453d5be35fef4ce243bc0b85fcd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e49b3da825ed104379ffc70070c9aeb68f19f0fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiClienteXp - Backup")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiClienteXp - Backup")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

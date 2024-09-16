@@ -7,26 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\NovaPasta\**" />
+    <Compile Remove="Domain\Entities\NovaPasta\**" />
     <Compile Remove="NovaPasta1\**" />
     <Compile Remove="NovaPasta2\**" />
     <Compile Remove="NovaPasta3\**" />
-    <Compile Remove="NovaPasta\**" />
-    <Content Remove="Models\NovaPasta\**" />
+    <Content Remove="Domain\Entities\NovaPasta\**" />
     <Content Remove="NovaPasta1\**" />
     <Content Remove="NovaPasta2\**" />
     <Content Remove="NovaPasta3\**" />
-    <Content Remove="NovaPasta\**" />
-    <EmbeddedResource Remove="Models\NovaPasta\**" />
+    <EmbeddedResource Remove="Domain\Entities\NovaPasta\**" />
     <EmbeddedResource Remove="NovaPasta1\**" />
     <EmbeddedResource Remove="NovaPasta2\**" />
     <EmbeddedResource Remove="NovaPasta3\**" />
-    <EmbeddedResource Remove="NovaPasta\**" />
-    <None Remove="Models\NovaPasta\**" />
+    <None Remove="Domain\Entities\NovaPasta\**" />
     <None Remove="NovaPasta1\**" />
     <None Remove="NovaPasta2\**" />
     <None Remove="NovaPasta3\**" />
-    <None Remove="NovaPasta\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,10 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <_GlobalJsonStartingDir Remove="NovaPasta\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <_GlobalJsonStartingDir Remove="NovaPasta1\**" />
   </ItemGroup>
 
@@ -54,15 +46,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Context\Class.cs" />
+    <Compile Remove="Infraestructure\Context\Class.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <_GlobalJsonStartingDir Remove="Models\NovaPasta\**" />
+    <_GlobalJsonStartingDir Remove="Domain\Entities\NovaPasta\**" />
   </ItemGroup>
 
   <ItemGroup>
     <_GlobalJsonStartingDir Remove="NovaPasta3\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Properties\launchSettings.json" />
   </ItemGroup>
 
 </Project>

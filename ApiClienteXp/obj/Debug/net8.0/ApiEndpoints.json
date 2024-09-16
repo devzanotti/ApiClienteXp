@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "ApiClienteXp.Controllers.ClientesController",
+    "ContainingType": "ApiClienteXp.API.Controllers.ClientesController",
     "Method": "Get",
     "RelativePath": "api/Clientes",
     "HttpMethod": "GET",
@@ -15,7 +15,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiClienteXp.Models.Cliente, ApiClienteXp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiClienteXp.Domain.Domain.Models.Cliente, ApiClienteXp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "ContainingType": "ApiClienteXp.Controllers.ClientesController",
+    "ContainingType": "ApiClienteXp.API.Controllers.ClientesController",
     "Method": "Post",
     "RelativePath": "api/Clientes",
     "HttpMethod": "POST",
@@ -35,7 +35,7 @@
     "Parameters": [
       {
         "Name": "cliente",
-        "Type": "ApiClienteXp.Models.Cliente",
+        "Type": "ApiClienteXp.Domain.Domain.Models.Cliente",
         "IsRequired": true
       },
       {
@@ -71,7 +71,7 @@
     ]
   },
   {
-    "ContainingType": "ApiClienteXp.Controllers.ClientesController",
+    "ContainingType": "ApiClienteXp.API.Controllers.ClientesController",
     "Method": "Get",
     "RelativePath": "api/Clientes/{id}",
     "HttpMethod": "GET",
@@ -91,7 +91,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ApiClienteXp.Models.Cliente",
+        "Type": "ApiClienteXp.Domain.Domain.Models.Cliente",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -121,7 +121,7 @@
     "EndpointName": "ObterCliente"
   },
   {
-    "ContainingType": "ApiClienteXp.Controllers.ClientesController",
+    "ContainingType": "ApiClienteXp.API.Controllers.ClientesController",
     "Method": "Put",
     "RelativePath": "api/Clientes/{id}",
     "HttpMethod": "PUT",
@@ -135,7 +135,7 @@
       },
       {
         "Name": "cliente",
-        "Type": "ApiClienteXp.Models.Cliente",
+        "Type": "ApiClienteXp.Domain.Domain.Models.Cliente",
         "IsRequired": true
       },
       {
@@ -180,7 +180,7 @@
     ]
   },
   {
-    "ContainingType": "ApiClienteXp.Controllers.ClientesController",
+    "ContainingType": "ApiClienteXp.API.Controllers.ClientesController",
     "Method": "Delete",
     "RelativePath": "api/Clientes/{id}",
     "HttpMethod": "DELETE",
@@ -234,7 +234,7 @@
     ]
   },
   {
-    "ContainingType": "ApiClienteXp.Controllers.ClientesController",
+    "ContainingType": "ApiClienteXp.API.Controllers.ClientesController",
     "Method": "GetClientesNome",
     "RelativePath": "api/Clientes/clientes/{nome}",
     "HttpMethod": "GET",
@@ -254,7 +254,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiClienteXp.Models.Cliente, ApiClienteXp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiClienteXp.Domain.Domain.Models.Cliente, ApiClienteXp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

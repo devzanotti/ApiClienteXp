@@ -1,8 +1,9 @@
-using ApiClienteXp.Context;
-using ApiClienteXp.Extensions;
-using ApiClienteXp.Filters;
-using ApiClienteXp.Repositories;
-using ApiClienteXp.Repositories.Interfaces;
+using ApiClienteXp.API.Filters;
+using ApiClienteXp.Domain.Domain.Interfaces;
+using ApiClienteXp.Domain.Interfaces;
+using ApiClienteXp.Infraestructure.Context;
+using ApiClienteXp.Infraestructure.Extensions;
+using ApiClienteXp.Infraestructure.Repositories;
 using Asp.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;

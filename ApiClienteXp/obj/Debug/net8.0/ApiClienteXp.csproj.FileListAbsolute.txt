@@ -107,8 +107,6 @@ C:\Users\user\source\repos\ApiClienteXp\bin\Debug\net8.0\Asp.Versioning.Abstract
 C:\Users\user\source\repos\ApiClienteXp\bin\Debug\net8.0\Asp.Versioning.Http.dll
 C:\Users\user\source\repos\ApiClienteXp\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
 C:\Users\user\source\repos\ApiClienteXp\bin\Debug\net8.0\Asp.Versioning.Mvc.ApiExplorer.dll
-C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\bin\Debug\net8.0\appsettings.json
 C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\bin\Debug\net8.0\ApiClienteXp.exe
 C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\bin\Debug\net8.0\ApiClienteXp.deps.json
 C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\bin\Debug\net8.0\ApiClienteXp.runtimeconfig.json
@@ -218,3 +216,5 @@ C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\obj\Debug\net8.0
 C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\obj\Debug\net8.0\ref\ApiClienteXp.dll
 C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\bin\Debug\net8.0\Castle.Core.dll
 C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\bin\Debug\net8.0\Moq.dll
+C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\user\source\repos\src-xp\ApiClienteXpProj\ApiClienteXp\bin\Debug\net8.0\appsettings.json
