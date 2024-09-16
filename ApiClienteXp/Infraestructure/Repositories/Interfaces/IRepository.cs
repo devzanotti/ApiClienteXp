@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace ApiClienteXp.Domain.Interfaces
+namespace ApiClienteXp.Infraestructure.Repositories.Interfaces
 {
     public interface IRepository<T>
     {

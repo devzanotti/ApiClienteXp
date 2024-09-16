@@ -1,6 +1,6 @@
-﻿using ApiClienteXp.Domain.Domain.Interfaces;
-using ApiClienteXp.Domain.Domain.Models;
+﻿using ApiClienteXp.Domain.Domain.Models;
 using ApiClienteXp.Infraestructure.Context;
+using ApiClienteXp.Infraestructure.Repositories.Interfaces;
 
 namespace ApiClienteXp.Infraestructure.Repositories
 {

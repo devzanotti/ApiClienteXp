@@ -1,32 +1,20 @@
 ﻿using ApiClienteXp.API.Controllers;
-using ApiClienteXp.Context;
-using ApiClienteXp.Domain.Interfaces;
-using ApiClienteXp.Domain.Models;
-using ApiClienteXp.Repositories;
+using ApiClienteXp.Domain.Domain.Models;
+using ApiClienteXp.Infraestructure.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ApiClienteXpxUnitTests.UnitTests
 {
     public class ClientesUnitTestController
     {
         private readonly Mock<IClienteRepository> _mockRepo;
-        private readonly Mock<ILogger<ClientesController>> _mockLogger;
         private readonly ClientesController _controller;
 
         public ClientesUnitTestController()
         {
             _mockRepo = new Mock<IClienteRepository>();
-            _mockLogger = new Mock<ILogger<ClientesController>>();
-            _controller = new ClientesController(_mockRepo.Object, _mockLogger.Object);
+            _controller = new ClientesController(_mockRepo.Object);
         }
 
         [Fact]

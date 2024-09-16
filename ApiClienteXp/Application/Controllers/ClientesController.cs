@@ -1,8 +1,8 @@
 ﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
-using ApiClienteXp.Domain.Domain.Interfaces;
 using ApiClienteXp.Domain.Domain.Models;
 using ApiClienteXp.API.Filters;
+using ApiClienteXp.Infraestructure.Repositories.Interfaces;
 
 namespace ApiClienteXp.API.Controllers
 {

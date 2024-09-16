@@ -1,5 +1,5 @@
-﻿using ApiClienteXp.Domain.Interfaces;
-using ApiClienteXp.Infraestructure.Context;
+﻿using ApiClienteXp.Infraestructure.Context;
+using ApiClienteXp.Infraestructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
