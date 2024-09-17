@@ -4,7 +4,7 @@ namespace ApiClienteXp.Domain.Validation
 {
     public class PrimeiraLetraMaiusculaAttribute : ValidationAttribute
     {
-        protected override ValidationResult? IsValid(object value,
+        protected override ValidationResult IsValid(object value,
             ValidationContext validationContext)
         {
             if (value == null || string.IsNullOrEmpty(value.ToString()))
