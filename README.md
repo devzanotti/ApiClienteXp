@@ -1,6 +1,6 @@
 # Clientes API
 
-Este é um projeto Back-And de Cadastro de Usuarios. Essa API permite Criar, Deletar, Ler e Atualizar um Cliente no banco de dados.
+Este é um projeto Back-And de Cadastro de Clientes. Essa API permite Criar, Deletar, Ler e Atualizar um Cliente no banco de dados.
 
 ## Requirements
 
