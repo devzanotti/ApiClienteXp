@@ -15,6 +15,7 @@ namespace ApiClienteXp.Domain.Domain.Models
 
         [Required(ErrorMessage = "O CPF é obrigatório.")]
         [StringLength(11, MinimumLength = 11, ErrorMessage = "O CPF deve ter 11 caracteres.")]
+        [ValidarCPFAttribute]
         public string Cpf { get; set; }
 
         [Required(ErrorMessage = "O e-mail é obrigatório.")]

@@ -2,6 +2,7 @@
 using ApiClienteXp.Infraestructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using ApiClienteXp.Domain.Validation;
 
 namespace ApiClienteXp.Infraestructure.Repositories
 {
