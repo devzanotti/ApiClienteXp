@@ -2,6 +2,10 @@
 
 Este é um projeto Back-And de Cadastro de Clientes. Essa API permite Criar, Deletar, Ler e Atualizar um Cliente no banco de dados.
 
+<p align="center">
+    <img src="/Assets/gifPequeno.gif">
+</p>
+
 ## Requirements
 
 - [.NET 8.0](https://dotnet.microsoft.com/en-us/download)
