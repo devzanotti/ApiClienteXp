@@ -1,6 +1,6 @@
 # Clientes API
 
-Este é um projeto Back-And de Cadastro de Clientes. Essa API permite Criar, Deletar, Ler e Atualizar um Cliente no banco de dados.
+Este projeto é uma API em c# com .NET Core para o gerenciamento de clientes. A API segue os princípios da Clean Architecture e é documentada com Swagger.
 
 <p align="center">
     <img src="/Assets/gifPequeno.gif">
@@ -16,8 +16,9 @@ Este é um projeto Back-And de Cadastro de Clientes. Essa API permite Criar, Del
 ## Technologies
 
 - C#
-- .Net
+- .NET Core
 - MySQL
+- xUnit (Testes Unitarios)
 - Swagger (Documentação)
 
 ## Métodos
