@@ -1,6 +1,6 @@
 # Clientes API
 
-Este projeto é uma API em c# com .NET Core para o gerenciamento de clientes. A API segue os princípios da Clean Architecture e é documentada com Swagger.
+Este projeto é uma API em C# com .NET Core para o gerenciamento de clientes. A API segue os princípios da Clean Architecture e é documentada com Swagger.
 
 <p align="center">
     <img src="/Assets/gifPequeno.gif">
