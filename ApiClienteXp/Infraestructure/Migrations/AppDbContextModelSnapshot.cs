@@ -2,6 +2,8 @@
 using ApiClienteXp.Infraestructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
@@ -19,7 +21,7 @@ namespace ApiClienteXp.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("ApiClienteXp.Models.Cliente", b =>
+            modelBuilder.Entity("ApiClienteXp.Domain.Domain.Models.Cliente", b =>
                 {
                     b.Property<int>("ClienteId")
                         .ValueGeneratedOnAdd()

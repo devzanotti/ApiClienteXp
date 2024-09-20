@@ -1,5 +1,6 @@
 ﻿using ApiClienteXp.Domain.Validation;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ApiClienteXp.Domain.Domain.Models
 {
@@ -10,6 +11,7 @@ namespace ApiClienteXp.Domain.Domain.Models
 
         [Required(ErrorMessage = "O nome é obrigatório.")]
         [MaxLength(100, ErrorMessage = "O nome pode ter no máximo 100 caracteres.")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [PrimeiraLetraMaiuscula]
         public string Nome { get; set; }
 
